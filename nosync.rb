@@ -5,7 +5,7 @@ require 'pathname'
 
 def top_level_paths(paths)
   paths.reject { |child_path|
-    child_path.parent.ascend.any? { |parent_path| paths.include?(parent_path) }
+    child_path.dirname.ascend.any? { |parent_path| paths.include?(parent_path) }
   }
 end
 
